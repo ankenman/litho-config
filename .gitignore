@@ -11,6 +11,13 @@ Makefile
 compile_commands.json
 *.dir/
 
+# Conan generated files
+CMakeUserPresets.json
+conan_toolchain.cmake
+conandeps_legacy.cmake
+conan_provider.cmake
+conandata.yml.lock
+
 # IDE: CLion / JetBrains
 .idea/
 *.iml
