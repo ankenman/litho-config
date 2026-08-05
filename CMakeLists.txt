@@ -23,7 +23,9 @@ target_include_directories(litho_config PUBLIC
     $<INSTALL_INTERFACE:include>
 )
 
-target_link_libraries(litho_config PUBLIC nlohmann_json::nlohmann_json)
+target_link_libraries(litho_config PUBLIC
+        $<BUILD_INTERFACE:nlohmann_json::nlohmann_json>
+)
 
 target_compile_features(litho_config PUBLIC cxx_std_20)
 
@@ -45,6 +47,18 @@ install(DIRECTORY include/ DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
 install(EXPORT litho_configTargets
         FILE litho_configTargets.cmake
         NAMESPACE litho::
+        DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/litho_config
+)
+
+include(CMakePackageConfigHelpers)
+
+configure_package_config_file(
+        ${CMAKE_CURRENT_SOURCE_DIR}/cmake/litho_configConfig.cmake.in
+        ${CMAKE_CURRENT_BINARY_DIR}/litho_configConfig.cmake
+        INSTALL_DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/litho_config
+)
+
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/litho_configConfig.cmake
         DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/litho_config
 )
 
