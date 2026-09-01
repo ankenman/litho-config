@@ -3,7 +3,7 @@
 [![googletest](https://github.com/ankenman/litho-config/actions/workflows/googletest.yml/badge.svg)](https://github.com/ankenman/litho-config/actions/workflows/googletest.yml)
 [![clang-format](https://github.com/ankenman/litho-config/actions/workflows/clang-format.yml/badge.svg)](https://github.com/ankenman/litho-config/actions/workflows/clang-format.yml)
 
-A C++20 knob-based configuration library for simulators and other command-line applications.
+A C++17 knob-based configuration library for simulators and other command-line applications.
 
 Modules register named, typed knobs at construction time. Values can be set from the command line, a plain-text config file, or a JSON file, with well-defined precedence. `--help` output is generated automatically from registered knobs.
 
@@ -47,7 +47,7 @@ Run it:
 
 ## Building
 
-Requires a C++20 compiler and CMake 3.14+. Depends on nlohmann/json.
+Requires a C++17 compiler and CMake 3.14+. Depends on nlohmann/json.
 
 ### With FetchContent
 

@@ -57,7 +57,7 @@ class LithoConfigConan(ConanFile):
         deps.generate()
 
         tc = CMakeToolchain(self)
-        tc.variables["CMAKE_CXX_STANDARD"] = "20"
+        tc.variables["CMAKE_CXX_STANDARD"] = "17"
         tc.variables["CMAKE_CXX_STANDARD_REQUIRED"] = "ON"
         tc.generate()
 

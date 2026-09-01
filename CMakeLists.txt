@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.14)
 project(litho_config VERSION 0.1.0 LANGUAGES CXX)
 
-set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(nlohmann_json QUIET) # try conan first
@@ -27,7 +27,7 @@ target_link_libraries(litho_config PUBLIC
         $<BUILD_INTERFACE:nlohmann_json::nlohmann_json>
 )
 
-target_compile_features(litho_config PUBLIC cxx_std_20)
+target_compile_features(litho_config PUBLIC cxx_std_17)
 
 # Alias for consumers
 add_library(litho::config ALIAS litho_config)

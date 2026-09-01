@@ -144,7 +144,7 @@ parse_command_line(int argc, char* argv[], bool strict) -> void
             continue;
         }
 
-        if (arg.starts_with("--")) {
+        if (arg.rfind("--", 0) == 0) {
             std::string key = arg.substr(2);
 
             if (i + 1 < argc && argv[i + 1][0] != '-') {
